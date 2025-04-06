@@ -14,9 +14,8 @@ public class Lutador {
         this.nacionalidade = nc;
         this.idade = i;
         this.altura = a;
-        this.peso = p;
+        setPeso(p);
         this.setCategoria();
-
         this.vitoras = v;
         this.derrotas = d;
         this.empates = e;
@@ -25,22 +24,31 @@ public class Lutador {
     // ------ Metodos Especiais ------
 
     public void apresentar() {
-
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Nacionalidade: " + this.nacionalidade);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Altura: " + this.altura);
     }
 
     public void status(){
-
+        System.out.println("Categoria: " + this.getCategoria());
+        System.out.println("Vitórias: " + this.getVitoras());
+        System.out.println("Derrotas: " + this.getDerrotas());
+        System.out.println("Empates: " + this.getEmpates());
     }
 
     public void ganharLuta(){
+        setVitoras(getVitoras() + 1);
 
     }
 
     public void perderLuta(){
+        setDerrotas(getDerrotas() + 1);
 
     }
 
     public void empatarLuta(){
+        setEmpates(getEmpates() + 1);
 
     }
 
@@ -60,7 +68,7 @@ public class Lutador {
     }
 
     public void setCategoria() {
-        if (this.getPeso() < 70 ) {
+        if (this.getPeso() <= 70 ) {
             this.categoria = "leve";
         } else if ( this.getPeso() >= 71  &&  this.getPeso() < 90) {
             this.categoria = "Medio";
