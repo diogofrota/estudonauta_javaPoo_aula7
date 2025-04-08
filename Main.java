@@ -10,7 +10,11 @@ public class Main {
         lutadores[4] = new Lutador("Neraard", "EUA", 30, 1.81,105.7,  12,2,4);
         lutadores[5] = new Lutador("Dead Code", "Australia", 28,1.93,81.6,13,0, 2);
 
-        lutadores[0].apresentar();
+
+        Luta Uec01 =  new Luta();
+        Uec01.marcarLuta(lutadores[1],lutadores[1]);
+        Uec01.lutar();
+
 
     }
 }
